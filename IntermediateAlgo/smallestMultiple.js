@@ -44,20 +44,26 @@ function findLCM(val1,val2){
 		}
 	}
 	//Returns a*b/GCD(a,b)
-	common = common.sort();
-	console.log(common);
+	common = common.sort(function(a,b){return a-b;});
 	return val1*val2/(common[common.length-1]);
 }
 
 function findLCMArr(arr){
+	let count = 0;		//Keeps count of how many times LCM have been done
+	let LCMArr = [];	//WIll store LCM value & next array element
+	LCMArr.push(findLCM(arr[0],arr[1]));
+	for(let i=2;i<arr.length-1;i++){
+		LCMArr.push(arr[i]);
+		console.log(LCMArr);
+		LCMArr[0]=findLCM(LCMArr[0],LCMArr[1]);
+	}
 	
 }
 
 function smallestCommons(arr){
 	let fullArr = generateFullArr(arr);
-
+	console.log(fullArr);;
+	findLCMArr(fullArr);
 }
 
-console.log(findLCM(2,5));
-console.log(findLCM(2,2));
-console.log(findLCM(98,56));
+smallestCommons([1, 5]);

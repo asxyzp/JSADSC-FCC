@@ -108,3 +108,12 @@ const helloName = (greeting,firstName,randomWord) => {
 }
 let greet, firstName,randomWord = helloName("Hello","Aashish","Mogo Mogo");
 console.log(greet+" "+firstName+" "+randomWord);
+
+// Returning early pattern from the function
+function abTest(a, b) {
+	if(a<0 || b<0)
+    	return undefined;
+	return Math.round(Math.pow(Math.sqrt(a) + Math.sqrt(b), 2));
+}
+
+abTest(2,2);

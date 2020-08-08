@@ -28,7 +28,7 @@ var p,q,r,s;
 p = 123;
 q = 123.00;
 r = 123e1;
-s = 123e-1;
+s = 12.3e-1;
 console.log("\n",p,q,r,s,typeof(p));
 
 //Boolean data type
